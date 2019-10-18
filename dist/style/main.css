@@ -1,0 +1,68 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+/*Header*/
+.app-header{
+	
+}
+
+.app-navbar{
+
+}
+
+
+.navbar-left{
+	
+}
+
+.navbar-nav{
+	
+}
+.navbar-list{
+	
+}
+.navbar-list:hover{
+	
+}
+
+.active{
+	border-right: 1px solid orange;
+	border-bottom: 1px solid orange;
+}
+.navbar-link{
+	color: #fff;
+}
+
+.toggle-menu{
+	height: 25px;
+	width: 25px;
+	display: none;
+	margin:10px 0px;
+}
+
+
+.app-logo{
+	margin: 0;
+	padding: 0;
+}
+
+/*Footer*/
+.app-footer{
+}
+

@@ -1,0 +1,95 @@
+@media(max-width: 800px){
+
+	.toggle-menu{
+		display: block;
+	}
+	.navbar-nav{
+		position: absolute;
+		top: 15%;
+		display: flex;
+		flex-direction: column;
+		height: 0em;
+		opacity: 0;
+	}
+
+	.is-open{
+		height: 10em;
+		opacity: 1;
+	}
+	.body-grid{
+		display: flex;
+		flex-direction: column;
+		grid-gap: 1rem;
+		padding: 20px;
+		color: #fff;
+		background: #000;
+	}	
+
+	.main-latest{
+		padding: 0px;
+	}
+
+	.main-upcoming{
+		border-left: 0px;
+	}
+	
+	.footer-nav{
+		justify-content: space-between;
+	}
+
+	.footer-navbar-nav{
+		margin-right: 0;
+		padding: 0;
+	}
+	.footer-social-div{
+		margin-right: 10px;
+	}
+}
+
+@media(max-width: 500px){
+	.app-header{
+		height: 100vh;
+
+	}
+	.nav-sidebar{
+		padding-right: 0px;
+	}
+
+	.header-background{
+		display: flex;
+		flex-direction: column;
+	}
+	.album{
+		background-color: red;
+		margin-left: 220%;
+	}
+	.video {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 10px;
+	}
+	.video-image{
+		width: 100%;
+	}
+
+	.vacations{
+	display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+
+	.videos-latest{
+		margin:20px 0px;
+	}
+
+	.video-play{
+		width: 90vw;
+		height: 60vw;
+	}
+	
+	.footer-social-nav{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
