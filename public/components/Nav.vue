@@ -61,26 +61,26 @@
         
         <!--END OF NAV MENUS-->
       </nav>
-      <ul v-if="open" :class="(open) ? 'transition left-0 opacity-100': 'opacity-0' " class="absolute  right-0 bg-black py-4  z-30 flex flex-col justify-center items-center lg:hidden">
-          <li class="" @click="() => { this.open == false }">
+      <ul v-if="open" :class="(open) ? 'transition left-0 opacity-100': 'opacity-0' " class="absolute  right-0 bg-black py-4  z-30 flex flex-col justify-center items-center lg:hidden" @click="open = false">
+          <li class="">
             <router-link  to="/" class="flex flex-row items-center px-4 py-2 text-right hover:shadow-md w-40  ">
               <svg class="h-8 w-8 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
               <span class="font-semibold text-white ml-2 text-lg">Home</span>
             </router-link> 
           </li>
-          <li class="mt-3" @click="() => { this.open == false }"> 
+          <li class="mt-3"> 
             <router-link  to="/videos" class="flex flex-row items-center px-4 py-2 text-right hover:shadow-md w-40  ">
               <svg class="h-8 w-8 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z"/></svg>
               <span class="font-semibold text-white ml-2 text-lg">Videos</span>
             </router-link> 
           </li>
-          <li class="mt-3" @click="() => { this.open == false }">
+          <li class="mt-3">
             <router-link  to="/news" class="flex flex-row items-center px-4 py-2 text-right hover:shadow-md w-40  ">
                 <svg class="h-8 w-8 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M552 64H88c-13.255 0-24 10.745-24 24v8H24c-13.255 0-24 10.745-24 24v272c0 30.928 25.072 56 56 56h472c26.51 0 48-21.49 48-48V88c0-13.255-10.745-24-24-24zM56 400a8 8 0 0 1-8-8V144h16v248a8 8 0 0 1-8 8zm236-16H140c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm208 0H348c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm-208-96H140c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm208 0H348c-6.627 0-12-5.373-12-12v-8c0-6.627 5.373-12 12-12h152c6.627 0 12 5.373 12 12v8c0 6.627-5.373 12-12 12zm0-96H140c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h360c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12z"/></svg>
                 <span class="font-semibold text-white ml-2 text-lg">News</span>
             </router-link> 
           </li>
-          <li class="mt-3" @click="() => { this.open == false }">
+          <li class="mt-3">
             <router-link  to="musics" class="flex flex-row items-center px-4 py-2 text-right hover:shadow-md w-40 "> 
               <svg class="h-8 w-8 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M511.99 32.01c0-21.71-21.1-37.01-41.6-30.51L150.4 96c-13.3 4.2-22.4 16.5-22.4 30.5v261.42c-10.05-2.38-20.72-3.92-32-3.92-53.02 0-96 28.65-96 64s42.98 64 96 64 96-28.65 96-64V214.31l256-75.02v184.63c-10.05-2.38-20.72-3.92-32-3.92-53.02 0-96 28.65-96 64s42.98 64 96 64 96-28.65 96-64l-.01-351.99z"/></svg>
               <span class="font-semibold text-white ml-2 text-lg">Music</span>

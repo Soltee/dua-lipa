@@ -57,19 +57,19 @@
 	    }
 	  }, 
 	  mounted(){
-	  	//this.getLatestVideos();
+	  	this.getLatestVideos();
 	  },
 	  methods: {
-	  //   async getLatestVideos(){
-	  //     this.loading = true;
-	  //     const all = await client.getEntries({
-	  //         'content_type': 'duaVideos', //duaMusics duaNews
-	  //         order: '-sys.createdAt',
-	  //         limit: 4
-	  //       });
-	  //     this.videos = all.items;
-	  //     this.loading = false;
-	  //   }
+	    async getLatestVideos(){
+	      this.loading = true;
+	      const all = await client.getEntries({
+	          'content_type': 'duaVideos', //duaMusics duaNews
+	          order: '-sys.createdAt',
+	          limit: 4
+	        });
+	      this.videos = all.items;
+	      this.loading = false;
+	    }
 	  },
 	  components:{
 	  	carousel , Loader

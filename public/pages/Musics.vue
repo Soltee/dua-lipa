@@ -120,11 +120,13 @@ export default {
 				m.addEventListener("mouseover", (e) => {
 					details.classList.remove('offset');
 					details.classList.add('inset');
+					m.classList.add('.offset');
 				});
 
 				m.addEventListener("mouseleave", (e) => {
 					details.classList.add('offset');
 					details.classList.remove('inset');
+					m.classList.remove('.offset');
 				});
 			});
 		},

@@ -9,10 +9,10 @@
 				
 		        <div v-for="n in news" >
 		        	
-		        	<div  class="bg-black flex flex-col w-full md:w-64 md:w-300  rounded-lg my-2 mx-0 md:mx-2 ">
-						<img @click="openModal(n.sys.id)" class="w-full    h-64 object-cover rounded-lg  object-center cursor-pointer" src="">
-		  				<h4 class="text-white text-lg p-2 mb-2 font-bold">{{ n.fields.title }}</h4>
-			        	<p class="text-white p-2 font-semibold">{{ n.fields.intro }}</p>
+		        	<div  class="bg-black flex flex-col w-full md:w-64 md:w-300  rounded-lg my-2 mx-0 md:mx-2 hover:shadow-md">
+						<img @click="openModal(n)" class=" w-full    h-64 object-cover rounded-lg  object-center cursor-pointer" src="">
+		  				<h4 class=" text-white text-lg p-2 mb-2 font-bold">{{ n.fields.title }}</h4>
+			        	<p class="text-white p-2 font-semibold ">{{ n.fields.intro }}</p>
 		        	</div>
 		        </div>
 		        </div>
@@ -23,28 +23,28 @@
 			</div>
 		</div>
 		<div :class="(singleModal) ? 'fixed-modal' : 'hidden'" class="z-20 bg-black">
-			<div class="py-6 px-2 flex w-full sm:flex-row justify-end  fixed mt-16 rounded-lg sm:w-300 bg-black overflow-hidden">
-			
-				<div class="flex-1">
+			<div v-if="selected" class="py-6 px-2 flex w-full sm:flex-row absolute justify-end rounded-lg w-full bg-black overflow-hidden">
+				<div class="absolute inset-0 bg-black z-0" @click="()=>{
+	      					this.selected = null; 
+	      					this.singleModal = false ;
+	      				}">
+					
+				</div>
+				<div class="flex-1 z-10">
 					<div class="flex flex-row items-baseline">
 	      				<h3 class="text-white text-lg md:text-2xl mr-2 hover:text-gray-300 cursor-pointer" @click="()=>{
 	      					this.selected = null; 
 	      					this.singleModal = false ;
 	      				}">< Back</h3>
 	      				/
-	      				<h3 class="m-0 ml-2 font-bold text-lg md:text-2xl text-white text-center">Current New</h3>
+	      				<h3 class="m-0 ml-2 font-bold text-lg md:text-2xl text-white text-center">{{ selected.fields.title }}</h3>
 	      			</div>
 
 	      			<div class="text-white mt-4">
 	      				<div  class="bg-black flex flex-col w-full   rounded-lg ">
-							<img  class="w-full    h-64 object-cover rounded-lg  object-center cursor-pointer" src="">
+							<img  class="w-full    h-64 object-cover rounded-lg  object-center cursor-pointer" :src="``">
 				        	<p class="text-white p-2 font-semibold">
-				        		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				        		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				        		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				        		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				        		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				        		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				        		{{ selected.fields.posts }}
 				        	</p>
 			        	</div>
 	      			</div>
@@ -142,7 +142,6 @@ export default {
 	    //   this.loading = false;
 	    // },
 	    openModal(data){
-    		console.log(data);
     		this.selected = data;
     		this.singleModal = true;
 	    }
@@ -157,13 +156,13 @@ export default {
 	  }
 }
 </script>
-<style>
+<style scoped>
 	.fixed-modal{
 		display: block;
 		position: fixed;
     	top: 0;
     	left:0;
-    	width: 100%;
-    	height: auto;
+    	width: 400px;
+    	height: 100vh;
 	}
 </style>
