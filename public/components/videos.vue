@@ -9,7 +9,7 @@
 	      	<div v-if="!loading" >
 		        <carousel class="md:mt-10 mt-4" :items="1" :nav="false">
 		        	<div  v-for="video in videos"  class="flex flex-row items-center justify-center">
-		        		<iframe class="w-full h-64  md:h-500" :src="`${video.fields.videoUrl}`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		        		<iframe class="w-full h-64  md:h-500" :src="`${video.videoUrl}`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		            </div>
 				</carousel>
 	        </div>
@@ -29,7 +29,7 @@
 	        <div v-if="!loading" class="mt-4 md:mt-10">
 		        <carousel class="mx-auto" :responsive="{0:{items:1,nav:false},600:{items:3, nav:false}}"  :nav="false">
 		        	<div v-for="video in videos"  class="flex flex-row items-center justify-center">
-			        	<img class="w-64 h-64 object-cover object-center" :src="`https:${video.fields.videoImage.fields.file.url}`">
+			        	<img class="w-64 h-64 object-cover object-center" :src="`${video.videoImage}`">
 					</div>
 		        </carousel>
 	        </div>
@@ -43,34 +43,48 @@
 </template>
 
 <script>
-	import {createClient} from '../contentful'
 	import carousel from 'vue-owl-carousel';
 	import Loader from '../partials/Loader';
-	const client = createClient();
 
 	export default {
 	  name: 'videos',
 	  data () {
 	    return {
-	      videos : null,
-	    	loading: false
+	        videos :[
+	        	{
+	        		id : "1",
+		        	videoImage: "/images/swan-song-video.jpg",
+		        	videoUrl : "https://www.youtube.com/embed/kO8fTk6oKQg",
+		        	title : 'Swan Song'
+	        	},
+	        	{
+	        		id : "3",
+		        	videoImage: "/images/new-rules.png",
+		        	videoUrl : "https://www.youtube.com/embed/k2qgadSvNyU",
+		        	title : 'New Rules'
+	        	},
+	        	{
+	        		id : "4",
+		        	videoImage: "/images/hotter-than-hell.jpg",
+		        	videoUrl : "https://www.youtube.com/embed/fEOyePhElr4",
+		        	title : 'Hotter Than Hell'
+	        	},
+	        	{
+	        		id : "5",
+		        	videoImage: "/images/one-kiss-video.jpg",
+		        	videoUrl : "https://www.youtube.com/embed/DkeiKbqa02g",
+		        	title : 'One Kiss'
+	        	},
+	        	{
+	        		id : "6",
+		        	videoImage: "/images/elctricity-video.jpg",
+		        	videoUrl : "https://www.youtube.com/embed/Q4-jOuHO-z4",
+		        	title : 'Electricity'
+	        	}
+	        ],
+	        loading: false
 	    }
 	  }, 
-	  mounted(){
-	  	this.getLatestVideos();
-	  },
-	  methods: {
-	    async getLatestVideos(){
-	      this.loading = true;
-	      const all = await client.getEntries({
-	          'content_type': 'duaVideos', //duaMusics duaNews
-	          order: '-sys.createdAt',
-	          limit: 4
-	        });
-	      this.videos = all.items;
-	      this.loading = false;
-	    }
-	  },
 	  components:{
 	  	carousel , Loader
 	  }
