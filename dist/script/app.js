@@ -2774,7 +2774,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".w-901[data-v-41c0d6cf]{\n  width: 900px;\n}\r\n", ""]);
+exports.push([module.i, ".w-901[data-v-41c0d6cf]{\n  width: 900px;\n}\n", ""]);
 
 // exports
 
@@ -2793,7 +2793,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".sm-menu[data-v-26f0d35c]{\n  top: 70px;\n}\n.transition[data-v-26f0d35c]{\n  transition: all 0.4s ease-in-out;\n}\r\n", ""]);
+exports.push([module.i, ".sm-menu[data-v-26f0d35c]{\n  top: 70px;\n}\n.transition[data-v-26f0d35c]{\n  transition: all 0.4s ease-in-out;\n}\n", ""]);
 
 // exports
 
@@ -22111,7 +22111,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\alpha\progress\dualipa\dua\public\app.js */"./public/app.js");
+module.exports = __webpack_require__(/*! /home/soltee/Projects/dua-lipa/public/app.js */"./public/app.js");
 
 
 /***/ })
