@@ -37,10 +37,10 @@
 	      					this.singleModal = false ;
 	      				}">< Back</h3>
 	      				/
-	      				<h3 class="m-0 ml-2 font-bold text-lg md:text-2xl text-white text-center">{{ selected.fields.title }}</h3>
+	      				<h3 class="m-0 ml-2 font-bold text-md md:text-xl text-white text-center">{{ selected.fields.title }}</h3>
 	      			</div>
 
-	      			<div class="text-white mt-4">
+	      			<div class="text-white mt-4 h-full overflow-y-scroll">
 	      				<div  class="bg-black flex flex-col w-full   rounded-lg ">
 							<img  class="w-full    h-64 object-cover rounded-lg  object-center cursor-pointer" :src="`${selected.fields.newsImage}`">
 				        	<p class="text-white p-2 font-semibold">
