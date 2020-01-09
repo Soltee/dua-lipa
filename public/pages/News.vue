@@ -30,17 +30,17 @@
 	      				}">
 					
 				</div>
-				<div class="flex-1 z-10">
+				<div class="flex-1 z-10 h-full overflow-y-scroll">
 					<div class="flex flex-row items-baseline">
-	      				<h3 class="text-white text-lg md:text-2xl mr-2 hover:text-gray-300 cursor-pointer" @click="()=>{
+	      				<h3 class="text-white text-md md:text-lg mr-2 hover:text-gray-300 cursor-pointer" @click="()=>{
 	      					this.selected = null; 
 	      					this.singleModal = false ;
 	      				}">< Back</h3>
 	      				/
-	      				<h3 class="m-0 ml-2 font-bold text-md md:text-xl text-white text-center">{{ selected.fields.title }}</h3>
+	      				<h3 class="m-0 ml-2 font-bold text-md md:text-lg text-white text-center">{{ selected.fields.title }}</h3>
 	      			</div>
 
-	      			<div class="text-white mt-4 h-full overflow-y-scroll">
+	      			<div class="text-white mt-4 ">
 	      				<div  class="bg-black flex flex-col w-full   rounded-lg ">
 							<img  class="w-full    h-64 object-cover rounded-lg  object-center cursor-pointer" :src="`${selected.fields.newsImage}`">
 				        	<p class="text-white p-2 font-semibold">
